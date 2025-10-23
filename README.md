@@ -159,15 +159,6 @@ Data Analyst | Power BI Developer | Business Intelligence Specialist
 
 ---
 
-## 🙏 Acknowledgments
-
-This project was developed as part of my portfolio to demonstrate expertise in:
-- Business Intelligence and Data Analytics
-- Power BI Dashboard Design
-- Data Visualization Best Practices
-- KPI Development and Performance Tracking
-
----
 
 <div align="center">
 
