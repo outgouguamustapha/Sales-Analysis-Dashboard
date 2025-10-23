@@ -68,7 +68,7 @@ While this dashboard provides a robust "Overview," the analysis can be taken fur
 ## 🚀 How to View
 
   * **Live Dashboard:** You can view and interact with the live dashboard here: [**Sales Overview Dashboard**](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
-  * **Project Files:** You can download the project file [**(e.g., .pbix / .twbx)**] from this repository to explore the data model and DAX/calculated fields.
+  * **Project Files:** You can download the project file, to explore the data and take the next steps.
 
 -----
 
