@@ -2,6 +2,19 @@
 
 This project is a comprehensive Sales Overview dashboard created to analyze and visualize key sales performance metrics. The dashboard provides a high-level (MTD Revenue, Profit Margin) and granular (per-agent, per-region) view of sales data, enabling stakeholders to make data-driven decisions, identify top-performing agents, and pinpoint areas for improvement.
 
+## 📑 Table of Contents
+
+- [Overview](#-dashboard-overview)
+- [Overview](#-project-objectives)
+- [Key Features](#-key-features--insights)
+- [Dashboard Metrics](#-dashboard-metrics)
+- [Technology Stack](#-technology-stack)
+- [How to View](#-how-to-view)
+- [Future Enhancements](#-future-enhancements)
+- [Author](#-author)
+
+---
+
 ## 📊 Dashboard Preview
 
 ![Banner](Image/Overview2.png)
@@ -46,34 +59,117 @@ This dashboard consolidates complex sales data into one easy-to-understand inter
       * The dashboard is fully interactive, with filters for **Quarter**, **Month**, **Region**, and **Category** to allow for deeper, customized analysis.
 
 -----
+## 📊 Dashboard Metrics
 
-## 🛠️ Tools & Technologies
-
-  * **Dashboarding Tool:** Power BI.
-  * **Data Source:** Excel File.
-  * **Data Transformation:** Power Query.
-
------
-
-## 🚀 Next Steps & Future Improvements
-
-While this dashboard provides a robust "Overview," the analysis can be taken further by building out the other planned pages. Future improvements will focus on creating dedicated, drill-down pages for:
-
-  * **Region Page:** A detailed dashboard to analyze sales performance within specific regions, tracking trends, and top-performing areas.
-  * **Product Page:** An in-depth look at product-level performance, analyzing category and sub-category sales, profitability, and quantities sold.
-  * **Sales Agent Page:** A comprehensive performance scorecard for individual sales agents, tracking their target achievement, product mix, and customer activities.
+### Performance Indicators
+- **Month-to-Date (MTD) Revenue**: Current month's cumulative revenue
+- **Profit Margin %**: Ratio of net profit to revenue
+- **Target Achievement %**: Performance against set sales goals
+- **Regional Revenue Distribution**: Sales breakdown by geographic region
+- **Category Performance**: Revenue contribution by product category
 
 -----
 
+## 🛠️ Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| **Visualization Platform** | Microsoft Power BI |
+| **Data Source** | Excel (.xlsx) |
+| **Data Transformation** | Power Query |
+| **Data Modeling** | DAX (Data Analysis Expressions) |
+
+-----
 ## 🚀 How to View
 
-  * **Live Dashboard:** You can view and interact with the live dashboard here: [**Sales Overview Dashboard**](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
-  * **Project Files:** You can download the project files, to explore the data and take the next steps.
+### Interactive Dashboard
+
+Experience the live dashboard with full interactivity:
+
+**[➡️ View Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**
+
+### Dashboard Features
+- **Interactive Filters**: Click on any visual element to filter the entire dashboard
+- **Cross-filtering**: Select regions, categories, or time periods to update all metrics
+- **Drill-through**: Access detailed information by interacting with specific data points
+- **Export Options**: Download visuals and data for presentations or reports
 
 -----
+
+## 🔮 Future Enhancements
+
+This dashboard represents the "Overview" page of a comprehensive sales analytics solution. Planned expansions include:
+
+### 📍 Region Page
+- Detailed regional performance analysis with geographic visualizations
+- Regional trend comparisons and growth patterns
+- Top-performing territories and sales distribution within regions
+- Market penetration analysis by region
+
+### 📦 Product Page
+- Product-level profitability and margin analysis
+- Category and sub-category deep dives
+- Inventory turnover and product performance metrics
+- Best-selling products and underperforming SKUs
+- Product mix optimization insights
+
+### 👥 Sales Agent Page
+- Comprehensive individual performance scorecards
+- Historical performance trends and growth tracking
+- Customer relationship and account management metrics
+- Product mix and category expertise by agent
+- Commission and incentive calculations
+- Performance rankings and peer comparisons
+
+### Additional Analytics Features
+- Predictive analytics for sales forecasting
+- Year-over-year comparison analysis
+- Customer segmentation and behavior patterns
+- Automated insights and anomaly detection
+
+
+-----
+
+## 💼 About This Project
+
+This dashboard showcases advanced data analysis and visualization capabilities in Power BI, demonstrating:
+
+- **Data Modeling**: Efficient data structure design for optimal performance
+- **DAX Proficiency**: Complex calculations for KPIs and metrics
+- **Visual Design**: Clean, intuitive, and professional dashboard layout
+- **Business Intelligence**: Translation of raw data into actionable insights
+- **User Experience**: Interactive elements that enhance data exploration
+
+The project highlights skills in data transformation, business analytics, and creating executive-level reporting solutions.
+
+---
 
 ## 👤 Author
 
-  * **OUTGOUGUA MUSTAPHA**
-  * **GitHub:** [GitHub Profil](https://github.com/outgouguamustapha)
-  * **LinkedIn:** [linkedin Profil](https://www.linkedin.com/in/mustapha-outgougua/)
+**OUTGOUGUA MUSTAPHA**
+
+Data Analyst | Power BI Developer | Business Intelligence Specialist
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/mustapha-outgougua/)
+- 🐙 [GitHub](https://github.com/outgouguamustapha)
+- 📧 Open to collaboration and opportunities
+
+---
+
+## 🙏 Acknowledgments
+
+This project was developed as part of my portfolio to demonstrate expertise in:
+- Business Intelligence and Data Analytics
+- Power BI Dashboard Design
+- Data Visualization Best Practices
+- KPI Development and Performance Tracking
+
+---
+
+<div align="center">
+
+**If you found this project insightful, please consider giving it a ⭐!**
+
+Made with ❤️ and Power BI
+
+</div>
