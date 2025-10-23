@@ -7,8 +7,8 @@ This project is a comprehensive Sales Overview dashboard created to analyze and 
 
 ## 📑 Table of Contents
 
-- [Overview](#-dashboard-overview)
-- [Overview](#-project-objectives)
+- [Overview](#-dashboard-preview)
+- [Project Objectives](#-project-objectives)
 - [Key Features](#-key-features--insights)
 - [Dashboard Metrics](#-dashboard-metrics)
 - [Technology Stack](#-technology-stack)
