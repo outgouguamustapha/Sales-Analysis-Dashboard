@@ -2,6 +2,9 @@
 
 This project is a comprehensive Sales Overview dashboard created to analyze and visualize key sales performance metrics. The dashboard provides a high-level (MTD Revenue, Profit Margin) and granular (per-agent, per-region) view of sales data, enabling stakeholders to make data-driven decisions, identify top-performing agents, and pinpoint areas for improvement.
 
+[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
+[![Excel](https://img.shields.io/badge/Data%20Source-Excel-green?logo=microsoftexcel)](.)
+
 ## 📑 Table of Contents
 
 - [Overview](#-dashboard-overview)
