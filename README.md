@@ -4,7 +4,7 @@ This project is a comprehensive Sales Overview dashboard created to analyze and 
 
 ## 📊 Dashboard Preview
 
-![Banner](screenshots/OVERVIEW.png)
+![Banner](Image/Overview2.png)
 
 -----
 
