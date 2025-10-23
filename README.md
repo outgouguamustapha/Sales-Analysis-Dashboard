@@ -11,7 +11,7 @@ This project is a comprehensive Sales Overview dashboard created to analyze and 
 - [Project Objectives](#-project-objectives)
 - [Key Features](#-key-features--insights)
 - [Dashboard Metrics](#-dashboard-metrics)
-- [Technology Stack](#-technology-stack)
+- [Technology Stack](#%EF%B8%8F-technology-stack)
 - [How to View](#-how-to-view)
 - [Future Enhancements](#-future-enhancements)
 - [Author](#-author)
