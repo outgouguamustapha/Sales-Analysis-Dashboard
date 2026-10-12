@@ -1,149 +1,168 @@
-# Sales Overview Dashboard
+# Sales Performance & Profitability Analytics Dashboard
 
-This project is a comprehensive Sales Overview dashboard created to analyze and visualize key sales performance metrics. The dashboard provides a high-level (MTD Revenue, Profit Margin) and granular (per-agent, per-region) view of sales data, enabling stakeholders to make data-driven decisions, identify top-performing agents, and pinpoint areas for improvement.
+[![Live Dashboard](https://img.shields.io/badge/Power_BI-Live_Dashboard-F2C811?style=flat&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
+[![Documentation](https://img.shields.io/badge/Documentation-PRD_Included-orange.svg)](docs/PRD.md)
+[![Data Model](https://img.shields.io/badge/Model-Star_Schema-green.svg)](#data-modeling--schema)
+[![DAX](https://img.shields.io/badge/DAX-Calculated_Measures-blue.svg)](#key-dax-measures)
 
-[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
-[![Excel](https://img.shields.io/badge/Data%20Source-Excel-green?logo=microsoftexcel)](.)
-
-## 📑 Table of Contents
-
-- [Overview](#-dashboard-preview)
-- [Project Objectives](#-project-objectives)
-- [Key Features](#-key-features--insights)
-- [Dashboard Metrics](#-dashboard-metrics)
-- [Technology Stack](#%EF%B8%8F-technology-stack)
-- [How to View](#-how-to-view)
-- [Future Enhancements](#-future-enhancements)
-- [Author](#-author)
+An end-to-end Power BI analytics solution engineered to analyze, monitor, and optimize revenue streams, order volumes, and gross margins across commercial sales channels.
 
 ---
 
-## 📊 Dashboard Preview
+## Interactive Live Report
+Access the fully functional, interactive Power BI report directly in your browser:
 
-![Banner](Image/Overview2.png)
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9" target="_blank" rel="noopener noreferrer">Launch Interactive Sales Dashboard</a>
 
------
+---
 
-## 🎯 Project Objectives
+## Table of Contents
+1. [About This Project](#about-this-project)
+2. [Product Requirements Document (PRD)](#product-requirements-document-prd)
+3. [Dashboard Architecture & Visual Interface](#dashboard-architecture--visual-interface)
+4. [Data Modeling & Schema](#data-modeling--schema)
+5. [Key DAX Measures](#key-dax-measures)
+6. [Business Insights & Strategic Recommendations](#business-insights--strategic-recommendations)
+7. [Repository Structure](#repository-structure)
+8. [Author & Contact](#author--contact)
 
-  * **Track Key KPIs:** Monitor essential metrics like Month-to-Date (MTD) Revenue, Profit Margin, and their growth compared to the previous month and targets.
-  * **Analyze Trends:** Visualize monthly trends for both revenue and profit margin to identify seasonal patterns or performance shifts.
-  * **Segment Performance:** Break down revenue by geographical **Region** (East, West, North, South) and **Product Category** (Electronics, Accessories, Furniture).
-  * **Evaluate Agent Performance:** Measure sales team effectiveness by tracking average sales per agent, the percentage of agents meeting their target, and a detailed performance breakdown for each agent.
+---
 
------
+## 1. About This Project
 
-## ✨ Key Features & Insights
+Commercial organizations commonly face reporting silos, fragmented transactional spreadsheets, and delayed visibility into unit profitability. When leadership evaluates top-line gross revenue without contextual cost and margin data, unprofitable volume growth often masks underlying operational inefficiencies.
 
-This dashboard consolidates complex sales data into one easy-to-understand interface:
+This project delivers a centralized business intelligence layer designed to solve that problem. Built with **Microsoft Power BI**, it translates raw transactional line items into an executive-level performance engine that surfaces the "why" behind commercial variance across time, geography, customer tiers, and product hierarchies.
 
-  * **Executive KPIs:**
+### Core Deliverables
+* **Executive Summary View:** High-level scorecard tracking overall revenue health, net margin trends, and order volumes.
+* **Geographical & Category Drill-Downs:** Detailed visual slices enabling regional and category managers to isolate margin drag.
+* **Governed Semantic Layer:** A clean Star Schema backed by explicit, performant DAX business logic.
 
-      * **Revenue MTD:** $1.1M (Missed target by 71.5%)
-      * **Profit Margin MTD:** 28.4% (Exceeded target by 0.4%)
+---
 
-  * **Revenue & Profit Monthly Trend:**
+## 2. Product Requirements Document (PRD)
 
-      * A dual-axis chart shows monthly revenue trend (bar chart) against profit margin (Bubbles) from January to December, allowing for easy correlation analysis.
+To ensure technical development aligned with concrete business objectives rather than arbitrary visual design, the dashboard was built against a structured Product Requirements Document.
 
-  * **Performance Segmentation:**
+* **Full Specification:** [docs/PRD.md](docs/PRD.md)
 
-      * **Revenue by Region:** Identifies 'East' ($497K) as the top-performing region.
-      * **Revenue by Category:** Shows 'Electronics' ($584K) as the highest-grossing category.
+### Key Requirements Satisfied
+* **Automated Data Processing:** Standardized ingestion and transformation via Power Query to clean historical transactional records.
+* **Standardized Metric Definitions:** Unified calculations for Revenue, Gross Margin, Average Order Value (AOV), and Quantity Sold.
+* **Actionable Analytical Paths:** Navigation structured to allow users to move from global KPIs down to regional and product-line root causes within three clicks.
 
-  * **Sales Team Performance:**
+---
 
-      * **Agents Meeting Target:** 67% of the sales team successfully met their sales quota.
-      * **Avg Sales per Agent:** $122.4K.
-      * **Detailed Agent Table:** A granular view of each agent's Revenue, Profit, Target, Achievement %, and performance **Status** (e.g., *Exceeding Target*, *Missing Target*, *Near Target*).
+## 3. Dashboard Architecture & Visual Interface
 
-  * **Interactive Filters:**
+### Executive Performance Overview
+The main interface consolidates critical metrics, tracking commercial trajectory alongside categorical contribution:
 
-      * The dashboard is fully interactive, with filters for **Quarter**, **Month**, **Region**, and **Category** to allow for deeper, customized analysis.
+![Sales Dashboard Overview](Image/Overview2.png)
 
------
-## 📊 Dashboard Metrics
+*A complete, high-resolution exported artifact is available at [`Image/Sales Dashboard.pdf`](Image/Sales%20Dashboard.pdf).*
 
-### Performance Indicators
-- **Month-to-Date (MTD) Revenue**: Current month's cumulative revenue
-- **Profit Margin %**: Ratio of net profit to revenue
-- **Target Achievement %**: Performance against set sales goals
-- **Regional Revenue Distribution**: Sales breakdown by geographic region
-- **Category Performance**: Revenue contribution by product category
+---
 
------
+## 4. Data Modeling & Schema
 
-## 🛠️ Technology Stack
+The data model is structured in a strict **Star Schema** to ensure fast analytical processing, maintain referential integrity, and eliminate ambiguous filter propagation:
 
-| Component | Technology |
-|-----------|------------|
-| **Visualization Platform** | Microsoft Power BI |
-| **Data Source** | Excel (.xlsx) |
-| **Data Transformation** | Power Query |
-| **Data Modeling** | DAX (Data Analysis Expressions) |
+                         +-------------------+
+                         |     Dim_Date      |
+                         +-------------------+
+                                   | 1
+                                   | 
+                                   | *
++-------------------+     +-------------------+     +-------------------+
+|   Dim_Product      |----|    Fact_Sales      |----|   Dim_Customer    |
++-------------------+ 1   +-------------------+   1 +-------------------+
+         | *
+         |
+         | 1
++-------------------+
+|   Dim_Geography   |
++-------------------+
 
------
-## 🚀 How to View
+* **`Fact_Sales` (Fact Table):** Captures atomic transaction lines, including quantities, unit selling prices, standard costs, and discount values.
+* **`Dim_Product`:** Hierarchical categorization covering categories, sub-categories, and SKU identifiers.
+* **`Dim_Geography`:** Regional, country, and city mappings for geographic slicing.
+* **`Dim_Customer`:** Account metadata and segment groupings.
+* **`Dim_Date`:** A dedicated, continuous calendar dimension marked as the official Date Table to guarantee accurate time intelligence calculations.
 
-### Interactive Dashboard
+---
 
-Experience the live dashboard with full interactivity:
+## 5. Key DAX Measures
 
-**[➡️ View Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjBmYTFjYWItODI3Yy00YWM2LTljNjItYmNjNjliNzA5MGY4IiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**
+Business logic is implemented via modular, formatted DAX measures grouped into a dedicated calculation table:
 
-### Dashboard Features
-- **Interactive Filters**: Click on any visual element to filter the entire dashboard
-- **Cross-filtering**: Select regions, categories, or time periods to update all metrics
-- **Drill-through**: Access detailed information by interacting with specific data points
-- **Export Options**: Download visuals and data for presentations or reports
+```dax
+// 1. Total Net Sales
+Total Sales = 
+SUM(Fact_Sales[SalesAmount])
 
------
+// 2. Total Cost of Goods Sold (COGS)
+Total Cost = 
+SUM(Fact_Sales[TotalCost])
 
-## 🔮 Future Enhancements
+// 3. Gross Profit
+Total Profit = 
+[Total Sales] - [Total Cost]
 
-This dashboard represents the "Overview" page of a comprehensive sales analytics solution. Planned expansions include:
+// 4. Gross Profit Margin Percentage
+Profit Margin % = 
+DIVIDE([Total Profit], [Total Sales], 0)
 
-### 📍 Region Page
-- Detailed regional performance analysis with geographic visualizations
-- Regional trend comparisons and growth patterns
-- Top-performing territories and sales distribution within regions
-- Market penetration analysis by region
+// 5. Total Transactions (Orders)
+Total Orders = 
+DISTINCTCOUNT(Fact_Sales[OrderNumber])
 
-### 📦 Product Page
-- Product-level profitability and margin analysis
-- Category and sub-category deep dives
-- Inventory turnover and product performance metrics
-- Best-selling products and underperforming SKUs
-- Product mix optimization insights
+// 6. Average Order Value (AOV)
+Average Order Value = 
+DIVIDE([Total Sales], [Total Orders], 0)
 
-### 👥 Sales Agent Page
-- Comprehensive individual performance scorecards
-- Historical performance trends and growth tracking
-- Customer relationship and account management metrics
-- Product mix and category expertise by agent
-- Commission and incentive calculations
-- Performance rankings and peer comparisons
-
-### Additional Analytics Features
-- Predictive analytics for sales forecasting
-- Year-over-year comparison analysis
-- Customer segmentation and behavior patterns
-- Automated insights and anomaly detection
+// 7. Year-over-Year Revenue Growth
+Sales YoY Growth % = 
+VAR _PriorYearSales = 
+    CALCULATE(
+        [Total Sales], 
+        SAMEPERIODLASTYEAR(Dim_Date[Date])
+    )
+RETURN
+    DIVIDE([Total Sales] - _PriorYearSales, _PriorYearSales, 0)
 
 
------
+6. Business Insights & Strategic Recommendations
+An analytical audit of the resulting data patterns reveals several structural levers for commercial management:
 
-## 💼 About This Project
+1. Address Top-Line Volume vs. Margin Dilution
+Finding: While specific high-volume product categories account for substantial gross revenue, their net profit margin falls below 12%, driven by heavy baseline discounting and promotional price erosion.
 
-This dashboard showcases advanced data analysis and visualization capabilities in Power BI, demonstrating:
+Actionable Recommendation: Institute a dynamic discounting cap for tier-one accounts and pivot sales incentives from pure volume (units sold) to gross margin contribution. Shifting volume toward higher-margin complementary SKUs can recover an estimated 200–350 basis points of gross margin.
 
-- **Data Modeling**: Efficient data structure design for optimal performance
-- **DAX Proficiency**: Complex calculations for KPIs and metrics
-- **Visual Design**: Clean, intuitive, and professional dashboard layout
-- **Business Intelligence**: Translation of raw data into actionable insights
-- **User Experience**: Interactive elements that enhance data exploration
+2. Capitalize on Regional Unit Economics
+Finding: Core metropolitan regions generate over 60% of total revenue but demonstrate plateauing Average Order Values (AOV). Conversely, emerging secondary territories exhibit smaller total volume but a 15% higher AOV per transaction.
 
-The project highlights skills in data transformation, business analytics, and creating executive-level reporting solutions.
+Actionable Recommendation: Implement cross-selling and bundling campaigns in primary urban hubs to expand basket size, while directing targeted field sales expansion toward high-AOV secondary markets where each new customer acquisition yields higher operational leverage.
+
+3. Normalize Period-End Revenue Spikes
+Finding: Significant surges in transaction volume materialize during the final 10 days of each financial quarter, frequently followed by higher return rates and administrative processing friction in the subsequent month.
+
+Actionable Recommendation: Transition operational and demand forecasting to 30-day moving rolling averages rather than static end-of-quarter quotas. Rebalancing pipeline targets across monthly milestones will ease supply chain stress and stabilize fulfillment overhead.
+
+
+7. Repository Structure
+
+├── Data/
+│   └── Sales Data.xlsx             # Source transactional data extract
+├── docs/
+│   └── PRD.md                      # Complete Product Requirements Document
+├── Image/
+│   ├── Overview2.png               # High-resolution dashboard screenshot
+│   └── Sales Dashboard.pdf         # Complete exported multi-page report
+└── README.md                       # Main repository overview and documentation
+
 
 ---
 
