@@ -17,14 +17,14 @@ Access the fully functional, interactive Power BI report directly in your browse
 ---
 
 ## Table of Contents
-1. [About This Project](#about-this-project)
-2. [Product Requirements Document (PRD)](#product-requirements-document-prd)
-3. [Dashboard Architecture & Visual Interface](#dashboard-architecture--visual-interface)
-4. [Data Modeling & Schema](#data-modeling--schema)
-5. [Key DAX Measures](#key-dax-measures)
-6. [Business Insights & Strategic Recommendations](#business-insights--strategic-recommendations)
-7. [Repository Structure](#repository-structure)
-8. [Author & Contact](#author--contact)
+1. [About This Project](#1-about-this-project)
+2. [Product Requirements Document (PRD)](#2-product-requirements-document-prd)
+3. [Dashboard Architecture & Visual Interface](#3-dashboard-architecture--visual-interface)
+4. [Data Modeling & Schema](#4-data-modeling--schema)
+5. [Key DAX Measures](#5-key-dax-measures)
+6. [Business Insights & Strategic Recommendations](#6-business-insights--strategic-recommendations)
+7. [Repository Structure](#7-repository-structure)
+8. [Author & Contact](#8-author--contact)
 
 ---
 
