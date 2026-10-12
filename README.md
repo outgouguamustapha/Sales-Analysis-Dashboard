@@ -166,7 +166,7 @@ An analytical audit of the resulting data patterns reveals several structural le
 
 ---
 
-## 👤 Author
+## 8. Author & Contact
 
 **OUTGOUGUA MUSTAPHA**
 
