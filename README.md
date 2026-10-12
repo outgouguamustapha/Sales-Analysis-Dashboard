@@ -95,56 +95,107 @@ The data model is structured in a strict **Star Schema** to ensure fast analytic
 
 ## 5. Key DAX Measures
 
-Business logic is implemented via modular, formatted DAX measures grouped into a dedicated calculation table:
+The semantic layer is powered by modular DAX measures organized by business domains (Financial Core, Time Intelligence, Target Pacing, and Agent Productivity):
 
-```dax
-// 1. Total Net Sales
-Total Sales = 
-SUM(Fact_Sales[SalesAmount])
-
-// 2. Total Cost of Goods Sold (COGS)
-Total Cost = 
-SUM(Fact_Sales[TotalCost])
-
-// 3. Gross Profit
-Total Profit = 
-[Total Sales] - [Total Cost]
-
-// 4. Gross Profit Margin Percentage
-Profit Margin % = 
-DIVIDE([Total Profit], [Total Sales], 0)
-
-// 5. Total Transactions (Orders)
-Total Orders = 
-DISTINCTCOUNT(Fact_Sales[OrderNumber])
-
-// 6. Average Order Value (AOV)
-Average Order Value = 
-DIVIDE([Total Sales], [Total Orders], 0)
-
-// 7. Year-over-Year Revenue Growth
-Sales YoY Growth % = 
-VAR _PriorYearSales = 
-    CALCULATE(
-        [Total Sales], 
-        SAMEPERIODLASTYEAR(Dim_Date[Date])
-    )
-RETURN
-    DIVIDE([Total Sales] - _PriorYearSales, _PriorYearSales, 0)
+### 1. Core Financials & Margin
 ```
+// Total Top-Line Revenue
+Total Revenue = SUM(Fact_Sales[Sales])
+
+// Total Bottom-Line Profit
+Total Profit = SUM(Fact_Sales[Profit])
+
+// Month-to-Date Profit Margin
+Profit Margin MTD = DIVIDE([Total Profit], [Total Revenue])
+```
+### 2. Time Intelligence & MoM Pacing
+```
+// Revenue Month-to-Date
+Revenue MTD = 
+CALCULATE(
+    SUM(Fact_Sales[Sales]),
+    DATESMTD('DimDate'[Date])
+)
+
+// Revenue Month-over-Month % Change
+Revenue MoM % Change = 
+VAR Curr = [Current Month Sales]
+VAR Prev = [Previous Month Sales]
+RETURN
+IF(
+    NOT(ISBLANK(Curr)) && NOT(ISBLANK(Prev)),
+    DIVIDE(Curr - Prev, Prev),
+    0
+)
+```
+### 3. Target & Variance Tracking
+```
+// Target Achievement Percentage Against Budget ($100k Benchmark)
+Target Achievement % = 
+VAR _Actual = [Revenue MTD]
+VAR _Target = [Revenue Target] -- $100,000
+RETURN
+IF(
+    ISBLANK(_Actual),
+    BLANK(),
+    DIVIDE(_Actual, _Target)
+)
+
+// Target Performance Classification
+Status = 
+VAR _TargetAchievement = [Target Achievement %]
+RETURN
+SWITCH(
+    TRUE(),
+    ISBLANK(_TargetAchievement), "-",
+    _TargetAchievement >= 1, "Exceeding Target",
+    _TargetAchievement >= 0.95, "Near Target",
+    _TargetAchievement < 0.95, "Missing Target"
+)
+```
+### 3. Target & Variance Tracking
+```
+// Proportion of Sales Force Meeting Target
+Agents Meeting Target % = 
+VAR AgentsList = VALUES(Dim_Agent[Sales Agent Key])
+VAR MetTargetCount = 
+    SUMX(
+        AgentsList,
+        VAR _agent = Dim_Agent[Sales Agent Key]
+        VAR _agentRevenue = 
+            CALCULATE(
+                [Revenue MTD],
+                FILTER(ALL(Dim_Agent), Dim_Agent[Sales Agent Key] = _agent)
+            )
+        RETURN
+            IF(_agentRevenue >= [Revenue Target], 1, 0)
+    )
+VAR TotalAgents = COUNTROWS(AgentsList)
+RETURN
+IF(TotalAgents = 0, 0, DIVIDE(MetTargetCount, TotalAgents, 0))
+
+// Average Sales Volume per Active Rep MTD
+Avg Sales per Agent MTD = 
+DIVIDE(
+    [Revenue MTD],
+    DISTINCTCOUNT(Dim_Agent[Sales Agent Key])
+)
+```
+
+
 
 ## 6. Business Insights & Strategic Recommendations
 An analytical audit of the resulting data patterns reveals several structural levers for commercial management:
 
 ### 1. Address Top-Line Volume vs. Margin Dilution
-* **Finding:** While specific high-volume product categories account for substantial gross revenue, their net profit margin falls below 12%, driven by heavy baseline discounting and promotional price erosion.
+* **Finding:** While specific high-volume product categories account for substantial gross revenue, their net profit margin falls below the 28% operational benchmark, driven by heavy baseline discounting and promotional price erosion.
 
-* **Actionable Recommendation:** Institute a dynamic discounting cap for tier-one accounts and pivot sales incentives from pure volume (units sold) to gross margin contribution. Shifting volume toward higher-margin complementary SKUs can recover an estimated 200–350 basis points of gross margin.
+* **Actionable Recommendation:** Institute a dynamic discounting cap for tier-one accounts and pivot sales incentives from pure volume to gross margin contribution (Profit Margin MTD). Shifting volume toward higher-margin complementary SKUs can recover an estimated 200–350 basis points of gross margin.
 
-### 2. Capitalize on Regional Unit Economics
-* **Finding:** Core metropolitan regions generate over 60% of total revenue but demonstrate plateauing Average Order Values (AOV). Conversely, emerging secondary territories exhibit smaller total volume but a 15% higher AOV per transaction.
+### 2. Capitalize on Sales Force Distribution & Quota Balance
+* **Finding:** A significant variance exists in agent-level quota achievement: a concentrated subset of agents consistently exceeds the $100,000 revenue target, while aggregate Agents Meeting Target % indicates underperformance in the lower quartile.
 
-* **Actionable Recommendation:** Implement cross-selling and bundling campaigns in primary urban hubs to expand basket size, while directing targeted field sales expansion toward high-AOV secondary markets where each new customer acquisition yields higher operational leverage.
+* **Actionable Recommendation:** Actionable Recommendation: Benchmark the sales playbooks of top-performing reps and rebalance lead distribution algorithms. Pair underperforming tiers with structured enablement to lift average rep sales volume (Avg Sales per Agent MTD).
 
 ### 3. Normalize Period-End Revenue Spikes
 * **Finding:** Significant surges in transaction volume materialize during the final 10 days of each financial quarter, frequently followed by higher return rates and administrative processing friction in the subsequent month.
@@ -160,7 +211,7 @@ An analytical audit of the resulting data patterns reveals several structural le
 │   └── PRD.md                      # Complete Product Requirements Document
 ├── Image/
 │   ├── Overview2.png               # High-resolution dashboard screenshot
-│   └── Sales Dashboard.pdf         # Complete exported multi-page report
+│   └── Sales Dashboard.pdf         # Exported pdf report
 └── README.md                       # Main repository overview and documentation
 ```
 
