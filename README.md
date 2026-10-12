@@ -136,23 +136,23 @@ RETURN
 ## 6. Business Insights & Strategic Recommendations
 An analytical audit of the resulting data patterns reveals several structural levers for commercial management:
 
-1. Address Top-Line Volume vs. Margin Dilution
-Finding: While specific high-volume product categories account for substantial gross revenue, their net profit margin falls below 12%, driven by heavy baseline discounting and promotional price erosion.
+### 1. Address Top-Line Volume vs. Margin Dilution
+* **Finding:** While specific high-volume product categories account for substantial gross revenue, their net profit margin falls below 12%, driven by heavy baseline discounting and promotional price erosion.
 
-Actionable Recommendation: Institute a dynamic discounting cap for tier-one accounts and pivot sales incentives from pure volume (units sold) to gross margin contribution. Shifting volume toward higher-margin complementary SKUs can recover an estimated 200–350 basis points of gross margin.
+* **Actionable Recommendation:** Institute a dynamic discounting cap for tier-one accounts and pivot sales incentives from pure volume (units sold) to gross margin contribution. Shifting volume toward higher-margin complementary SKUs can recover an estimated 200–350 basis points of gross margin.
 
-2. Capitalize on Regional Unit Economics
-Finding: Core metropolitan regions generate over 60% of total revenue but demonstrate plateauing Average Order Values (AOV). Conversely, emerging secondary territories exhibit smaller total volume but a 15% higher AOV per transaction.
+### 2. Capitalize on Regional Unit Economics
+* **Finding:** Core metropolitan regions generate over 60% of total revenue but demonstrate plateauing Average Order Values (AOV). Conversely, emerging secondary territories exhibit smaller total volume but a 15% higher AOV per transaction.
 
-Actionable Recommendation: Implement cross-selling and bundling campaigns in primary urban hubs to expand basket size, while directing targeted field sales expansion toward high-AOV secondary markets where each new customer acquisition yields higher operational leverage.
+* **Actionable Recommendation:** Implement cross-selling and bundling campaigns in primary urban hubs to expand basket size, while directing targeted field sales expansion toward high-AOV secondary markets where each new customer acquisition yields higher operational leverage.
 
-3. Normalize Period-End Revenue Spikes
-Finding: Significant surges in transaction volume materialize during the final 10 days of each financial quarter, frequently followed by higher return rates and administrative processing friction in the subsequent month.
+### 3. Normalize Period-End Revenue Spikes
+* **Finding:** Significant surges in transaction volume materialize during the final 10 days of each financial quarter, frequently followed by higher return rates and administrative processing friction in the subsequent month.
 
-Actionable Recommendation: Transition operational and demand forecasting to 30-day moving rolling averages rather than static end-of-quarter quotas. Rebalancing pipeline targets across monthly milestones will ease supply chain stress and stabilize fulfillment overhead.
+* **Actionable Recommendation:** Transition operational and demand forecasting to 30-day moving rolling averages rather than static end-of-quarter quotas. Rebalancing pipeline targets across monthly milestones will ease supply chain stress and stabilize fulfillment overhead.
 
 
-7. Repository Structure
+## 7. Repository Structure
 ```
 ├── Data/
 │   └── Sales Data.xlsx             # Source transactional data extract
