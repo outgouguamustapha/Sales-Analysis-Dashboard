@@ -68,7 +68,7 @@ The main interface consolidates critical metrics, tracking commercial trajectory
 ## 4. Data Modeling & Schema
 
 The data model is structured in a strict **Star Schema** to ensure fast analytical processing, maintain referential integrity, and eliminate ambiguous filter propagation:
-
+"""
                          +-------------------+
                          |     Dim_Date      |
                          +-------------------+
@@ -131,9 +131,9 @@ VAR _PriorYearSales =
     )
 RETURN
     DIVIDE([Total Sales] - _PriorYearSales, _PriorYearSales, 0)
+```
 
-
-6. Business Insights & Strategic Recommendations
+## 6. Business Insights & Strategic Recommendations
 An analytical audit of the resulting data patterns reveals several structural levers for commercial management:
 
 1. Address Top-Line Volume vs. Margin Dilution
