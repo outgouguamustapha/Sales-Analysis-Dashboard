@@ -69,26 +69,26 @@ The main interface consolidates critical metrics, tracking commercial trajectory
 
 The data model is structured in a strict **Star Schema** to ensure fast analytical processing, maintain referential integrity, and eliminate ambiguous filter propagation:
 ```text
-                         +-------------------+
-                         |     Dim_Date      |
-                         +-------------------+
-                                   | 1
-                                   | 
-                                   | *
+                          +-------------------+
+                          |      DimDate      |
+                          +-------------------+
+                                    | 1
+                                    | 
+                                    | *
 +-------------------+     +-------------------+     +-------------------+
-|   Dim_Product      |----|    Fact_Sales      |----|   Dim_Customer    |
+|   Dim_Product     |--*--|    Fact_Sales     |--*--|   Dim_Customer    |
 +-------------------+ 1   +-------------------+   1 +-------------------+
-         | *
-         |
-         | 1
-+-------------------+
-|   Dim_Geography   |
-+-------------------+
+                                    | *
+                                    |
+                                    | 1
+                          +-------------------+
+                          |     Dim_Agent     |
+                          +-------------------+
 ```
-* **`Fact_Sales` (Fact Table):** Captures atomic transaction lines, including quantities, unit selling prices, standard costs, and discount values.
+* **`Fact_Sales` (Fact Table):** Captures atomic transaction lines, including sales amounts, profit figures, product keys, agent keys, and transaction dates.
 * **`Dim_Product`:** Hierarchical categorization covering categories, sub-categories, and SKU identifiers.
-* **`Dim_Geography`:** Regional, country, and city mappings for geographic slicing.
-* **`Dim_Customer`:** Account metadata and segment groupings.
+* **`Dim_Agent`:** Sales representative dimensions used for individual quota and performance evaluations.
+* **`Dim_Customer`:**Regional mappings, customer identifiers, and segment groupings.
 * **`Dim_Date`:** A dedicated, continuous calendar dimension marked as the official Date Table to guarantee accurate time intelligence calculations.
 
 ---
