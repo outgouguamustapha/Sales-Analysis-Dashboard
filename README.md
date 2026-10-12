@@ -68,7 +68,7 @@ The main interface consolidates critical metrics, tracking commercial trajectory
 ## 4. Data Modeling & Schema
 
 The data model is structured in a strict **Star Schema** to ensure fast analytical processing, maintain referential integrity, and eliminate ambiguous filter propagation:
-"""
+```text
                          +-------------------+
                          |     Dim_Date      |
                          +-------------------+
@@ -84,7 +84,7 @@ The data model is structured in a strict **Star Schema** to ensure fast analytic
 +-------------------+
 |   Dim_Geography   |
 +-------------------+
-
+```
 * **`Fact_Sales` (Fact Table):** Captures atomic transaction lines, including quantities, unit selling prices, standard costs, and discount values.
 * **`Dim_Product`:** Hierarchical categorization covering categories, sub-categories, and SKU identifiers.
 * **`Dim_Geography`:** Regional, country, and city mappings for geographic slicing.
@@ -153,7 +153,7 @@ Actionable Recommendation: Transition operational and demand forecasting to 30-d
 
 
 7. Repository Structure
-
+```
 ├── Data/
 │   └── Sales Data.xlsx             # Source transactional data extract
 ├── docs/
@@ -162,7 +162,7 @@ Actionable Recommendation: Transition operational and demand forecasting to 30-d
 │   ├── Overview2.png               # High-resolution dashboard screenshot
 │   └── Sales Dashboard.pdf         # Complete exported multi-page report
 └── README.md                       # Main repository overview and documentation
-
+```
 
 ---
 
